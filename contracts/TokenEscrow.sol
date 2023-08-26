@@ -14,7 +14,7 @@ contract TokenEscrow is Ownable {
     }
     Recipient[] public recipients;
 
-    address private conditionsFulfiller;
+    address public conditionsFulfiller;
 
     modifier onlyConditionsFulfiller() {
         require(msg.sender == conditionsFulfiller, "Only conditions fulfiller can call this function");

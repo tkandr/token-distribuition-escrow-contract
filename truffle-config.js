@@ -42,7 +42,8 @@
  */
 
 require("dotenv").config();
-const { MNEMONIC, PROJECT_ID, SECOND_ACC_PRIVATE_KEY } = process.env;
+const { MNEMONIC, PROJECT_ID, SECOND_ACC_PRIVATE_KEY, BSC_SCAN_API_KEY } =
+  process.env;
 
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 
@@ -135,6 +136,27 @@ module.exports = {
     },
   },
 
+  plugins: ["truffle-plugin-verify"],
+  api_keys: {
+    etherscan: "MY_API_KEY",
+    optimistic_etherscan: "MY_API_KEY",
+    arbiscan: "MY_API_KEY",
+    nova_arbiscan: "MY_API_KEY",
+    bscscan: BSC_SCAN_API_KEY,
+    snowtrace: "MY_API_KEY",
+    polygonscan: "MY_API_KEY",
+    zkevm_polygonscan: "MY_API_KEY",
+    ftmscan: "MY_API_KEY",
+    hecoinfo: "MY_API_KEY",
+    moonscan: "MY_API_KEY",
+    moonriver_moonscan: "MY_API_KEY",
+    bttcscan: "MY_API_KEY",
+    aurorascan: "MY_API_KEY",
+    cronoscan: "MY_API_KEY",
+    gnosisscan: "MY_API_KEY",
+    celoscan: "MY_API_KEY",
+    clvscan: "MY_API_KEY",
+  },
   // Truffle DB is currently disabled by default; to enable it, change enabled:
   // false to enabled: true. The default storage location can also be
   // overridden by specifying the adapter settings, as shown in the commented code below.
